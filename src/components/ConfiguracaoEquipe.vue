@@ -7,18 +7,39 @@
     </div>
     <div class="row">
       <div class="col-8">
+        <!-- Forma Simples com interpolação -->
         <!-- <p>Enfermeiro: {{ $store.state.equipe.enfermeiro }}</p>
         <p>Socorrista: {{ $store.state.equipe.socorrista }}</p>
         <p>Médico: {{ $store.state.equipe.medico }}</p>
         <p>Carro: {{ $store.state.equipe.carro }}</p>
         <p>Telefone: {{ $store.state.equipe.telefone }}</p>
         <p>Kit de reanimação: {{ $store.state.equipe.kitDeReanimacao }}</p> -->
-        <p>Enfermeiro: {{ equipe.enfermeiro }}</p>
+
+        <!-- Forma Simples com mapState([]) -->
+        <!-- <p>Enfermeiro: {{ equipe.enfermeiro }}</p>
         <p>Socorrista: {{ equipe.socorrista }}</p>
         <p>Médico: {{ equipe.medico }}</p>
         <p>Carro: {{ equipe.carro }}</p>
         <p>Telefone: {{ equipe.telefone }}</p>
-        <p>Kit de reanimação: {{ equipe.kitDeReanimacao }}</p>
+        <p>Kit de reanimação: {{ equipe.kitDeReanimacao }}</p> -->
+
+        <!-- Forma colocando apelidos com mapState({}) -->
+        <!-- <p>Enfermeiro: {{ xyz.enfermeiro }}</p>
+        <p>Socorrista: {{ xyz.socorrista }}</p>
+        <p>Médico: {{ xyz.medico }}</p>
+        <p>Carro: {{ xyz.carro }}</p>
+        <p>Telefone: {{ xyz.telefone }}</p>
+        <p>Kit de reanimação: {{ xyz.kitDeReanimacao }}</p> -->
+
+        <!-- Forma colocando nome para cada objeto com mapState({}) -->
+        <p>Enfermeiro: {{ enfermeiro }}</p>
+        <p>Socorrista: {{ socorrista }}</p>
+        <p>Médico: {{ medico }}</p>
+        <p>Carro: {{ carro }}</p>
+        <p>Telefone: {{ telefone }}</p>
+        <p>Kit de reanimação: {{ kitDeReanimacao }}</p>
+
+        <!-- <h2>Teste do Dimas: {{ teste }}</h2> -->
       </div>
       <div class="col-4 text-center">
         <div class="row">
@@ -41,8 +62,30 @@
 
 <script>
 import { mapState } from "vuex";
+
 export default {
   name: "ConfiguracaoEquipe",
-  computed: mapState(["equipe"]),
+
+  // computed: {
+  //   equipe() {
+  //     return this.$store.state.equipe;
+  //   },
+  // },
+
+  // computed: mapState(["equipe"]),
+
+  // computed: mapState({
+  //   xyz: (state) => state.equipe,
+  // }),
+
+  computed: mapState({
+    enfermeiro: (state) => state.equipe.enfermeiro,
+    socorrista: (state) => state.equipe.socorrista,
+    medico: (state) => state.equipe.medico,
+    carro: (state) => state.equipe.carro,
+    telefone: (state) => state.equipe.telefone,
+    kitDeReanimacao: (state) => state.equipe.kitDeReanimacao,
+    // teste: (state) => state.titulo,
+  }),
 };
 </script>
