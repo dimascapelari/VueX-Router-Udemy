@@ -2,7 +2,8 @@
   <div>
     <div class="row">
       <div class="col">
-        <h5><i class="bi-boxes me-2"></i>Configuração da equipe</h5>
+        <!-- <h5><i class="bi-boxes me-2"></i>Configuração da equipe</h5> -->
+        <h5><i class="bi-boxes me-2"></i>{{ tituloCustomizadoLocal }}</h5>
       </div>
     </div>
     <div class="row">
@@ -66,6 +67,12 @@ import { mapState } from "vuex";
 export default {
   name: "ConfiguracaoEquipe",
 
+  data() {
+    return {
+      titulo: "Configuração da equipe",
+    };
+  },
+
   // computed: {
   //   equipe() {
   //     return this.$store.state.equipe;
@@ -86,6 +93,9 @@ export default {
     telefone: (state) => state.equipe.telefone,
     kitDeReanimacao: (state) => state.equipe.kitDeReanimacao,
     // teste: (state) => state.titulo,
+    tituloCustomizadoLocal(state) {
+      return `${this.titulo} - ${state.equipe.carro}`;
+    },
   }),
 };
 </script>
