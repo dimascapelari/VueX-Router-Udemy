@@ -3,7 +3,9 @@
     <div class="row">
       <div class="col">
         <!-- <h5><i class="bi-boxes me-2"></i>Configuração da equipe</h5> -->
-        <h5><i class="bi-boxes me-2"></i>{{ tituloCustomizadoLocal }}</h5>
+        <h5 :class="corTitulo">
+          <i class="bi-boxes me-2"></i>{{ tituloCustomizadoLocal }}
+        </h5>
       </div>
     </div>
     <div class="row">
@@ -85,17 +87,40 @@ export default {
   //   xyz: (state) => state.equipe,
   // }),
 
-  computed: mapState({
-    enfermeiro: (state) => state.equipe.enfermeiro,
-    socorrista: (state) => state.equipe.socorrista,
-    medico: (state) => state.equipe.medico,
-    carro: (state) => state.equipe.carro,
-    telefone: (state) => state.equipe.telefone,
-    kitDeReanimacao: (state) => state.equipe.kitDeReanimacao,
-    // teste: (state) => state.titulo,
-    tituloCustomizadoLocal(state) {
-      return `${this.titulo} - ${state.equipe.carro}`;
+  // computed: mapState({
+  //   enfermeiro: (state) => state.equipe.enfermeiro,
+  //   socorrista: (state) => state.equipe.socorrista,
+  //   medico: (state) => state.equipe.medico,
+  //   carro: (state) => state.equipe.carro,
+  //   telefone: (state) => state.equipe.telefone,
+  //   kitDeReanimacao: (state) => state.equipe.kitDeReanimacao,
+  //   // teste: (state) => state.titulo,
+  //   tituloCustomizadoLocal(state) {
+  //     return `${this.titulo} - ${state.equipe.carro}`;
+  //   },
+  // }),
+
+  computed: {
+    ...mapState({
+      enfermeiro: (state) => state.equipe.enfermeiro,
+      socorrista: (state) => state.equipe.socorrista,
+      medico: (state) => state.equipe.medico,
+      carro: (state) => state.equipe.carro,
+      telefone: (state) => state.equipe.telefone,
+      kitDeReanimacao: (state) => state.equipe.kitDeReanimacao,
+      // teste: (state) => state.titulo,
+      tituloCustomizadoLocal(state) {
+        return `${this.titulo} - ${state.equipe.carro}`;
+      },
+    }),
+
+    corTitulo() {
+      let testeLogico = true;
+      if (testeLogico) {
+        return "text-danger";
+      }
+      return "text-primary";
     },
-  }),
+  },
 };
 </script>
