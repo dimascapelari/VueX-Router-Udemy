@@ -36,6 +36,9 @@ export default {
       enfermeiros: (state) => state.enfermeiros,
       socorristas: (state) => state.socorristas,
       medicos: (state) => state.medicos,
+      carros: (state) => state.equipamentos.carros,
+      telefones: (state) => state.equipamentos.telefones,
+      kitsDeReanimacao: (state) => state.equipamentos.kitsDeReanimacao,
     }),
     itens() {
       switch (this.tipo) {
@@ -45,6 +48,12 @@ export default {
           return this.socorristas;
         case "medicos":
           return this.medicos;
+        case "carros":
+          return this.carros;
+        case "telefones":
+          return this.telefones;
+        case "kits-de-reanimacao":
+          return this.kitsDeReanimacao;
       }
       return [];
     },
