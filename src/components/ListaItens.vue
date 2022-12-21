@@ -1,9 +1,9 @@
 <template>
   <div>
-    Lista Itens {{ tipo }}
+    <!-- Lista Itens {{ tipo }}
     <hr />
-    {{ itens }}
-    <item />
+    {{ itens }} -->
+    <item v-for="(item, indice) in itens" :key="indice" :dados="item" />
   </div>
 </template>
 
