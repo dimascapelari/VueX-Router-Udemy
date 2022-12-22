@@ -27,6 +27,14 @@ export default {
   },
   methods: {
     adicionarItemEquipe() {
+      let item = {
+        tipo: this.tipo,
+        dados: this.dados,
+      };
+      this.$store.commit("setItemEquipe", item);
+    },
+
+    adicionarItemEquipeAbordagemIncorreta() {
       // console.log(this.tipo, this.dados);
 
       // forma errada de fazer
