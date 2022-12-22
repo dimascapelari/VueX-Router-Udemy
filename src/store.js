@@ -72,15 +72,10 @@ export default new Vuex.Store({
         }
     },
     mutations: {
-        // setItemEquipe: (state, item) => {
-        setItemEquipe: (state, payload) => {
+        setItemEquipe: (state, item) => {
+            // setItemEquipe: (state, payload) => {
 
-            console.log('payload = ', payload)
-            console.log('payload.item = ', payload.item)
-            console.log('payload.item.tipo = ', payload.item.tipo)
-            console.log('payload.item.dados.nome = ', payload.item.dados.nome)
-
-            let item = payload.item
+            // let item = payload.item
 
             let t = item.tipo
             let d = item.dados

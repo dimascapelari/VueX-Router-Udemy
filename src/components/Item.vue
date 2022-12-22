@@ -19,6 +19,8 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
+
 export default {
   name: "Item",
   props: {
@@ -26,21 +28,21 @@ export default {
     tipo: String,
   },
   methods: {
+    // ...mapMutations(["setItemEquipe"]),
+    ...mapMutations({
+      setItemEquipe: "setItemEquipe",
+    }),
+
     adicionarItemEquipe() {
       let item = {
         tipo: this.tipo,
         dados: this.dados,
       };
-      // this.$store.commit("setItemEquipe", item);
-      this.$store.commit({
-        type: "setItemEquipe",
-        item,
-      });
+
+      this.setItemEquipe(item);
     },
 
     adicionarItemEquipeAbordagemIncorreta() {
-      // console.log(this.tipo, this.dados);
-
       // forma errada de fazer
       let t = this.tipo;
       let d = this.dados;
