@@ -31,6 +31,10 @@ export default {
     // ...mapMutations(["setItemEquipe"]),
     ...mapMutations({
       setItemEquipe: "setItemEquipe",
+      setItemEquipeComVerificacao: (commit, payload) => {
+        //camada de lógica
+        commit("setItemEquipe", payload);
+      },
     }),
 
     adicionarItemEquipe() {
