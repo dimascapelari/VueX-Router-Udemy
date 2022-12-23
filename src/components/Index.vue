@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
 import ConfiguracaoEquipe from "./ConfiguracaoEquipe.vue";
 import Equipamentos from "./Equipamentos.vue";
 import Equipes from "./Equipes.vue";
@@ -54,6 +55,38 @@ export default {
     tituloCustomizado() {
       return `.: ${this.$store.state.titulo}`;
     },
+  },
+  methods: {
+    ...mapMutations([
+      "setEnfermeiros",
+      "setSocorristas",
+      "setMedicos",
+      "setCarros",
+      "setTelefones",
+      "setKitsDeReanimacao",
+    ]),
+  },
+  created() {
+    fetch("http://localhost:3001/enfermeiros")
+      .then((response) => response.json())
+      .then((dados) => this.setEnfermeiros(dados));
+
+    fetch("http://localhost:3001/socorristas")
+      .then((response) => response.json())
+      .then((dados) => this.setSocorristas(dados));
+
+    fetch("http://localhost:3001/medicos")
+      .then((response) => response.json())
+      // .then((dados) => this.$store.commit("setMedicos", dados));
+      .then((dados) => this.setMedicos(dados));
+
+    fetch("http://localhost:3001/equipamentos")
+      .then((response) => response.json())
+      .then((dados) => {
+        this.setCarros(dados.carros);
+        this.setTelefones(dados);
+        this.setKitsDeReanimacao(dados.kitsDeReanimacao);
+      });
   },
 };
 </script>
