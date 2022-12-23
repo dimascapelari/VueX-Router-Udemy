@@ -80,12 +80,20 @@ export default {
       // .then((dados) => this.$store.commit("setMedicos", dados));
       .then((dados) => this.setMedicos(dados));
 
+    /*
     fetch("http://localhost:3001/equipamentos")
       .then((response) => response.json())
       .then((dados) => {
         this.setCarros(dados.carros);
         this.setTelefones(dados);
         this.setKitsDeReanimacao(dados.kitsDeReanimacao);
+      });
+      */
+
+    fetch("http://localhost:3001/equipamentos")
+      .then((response) => response.json())
+      .then((dados) => {
+        this.$store.dispatch("adicinarEquipamentos", dados);
       });
   },
 };
