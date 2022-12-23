@@ -67,34 +67,8 @@ export default {
     ]),
   },
   created() {
-    fetch("http://localhost:3001/enfermeiros")
-      .then((response) => response.json())
-      .then((dados) => this.setEnfermeiros(dados));
-
-    fetch("http://localhost:3001/socorristas")
-      .then((response) => response.json())
-      .then((dados) => this.setSocorristas(dados));
-
-    fetch("http://localhost:3001/medicos")
-      .then((response) => response.json())
-      // .then((dados) => this.$store.commit("setMedicos", dados));
-      .then((dados) => this.setMedicos(dados));
-
-    /*
-    fetch("http://localhost:3001/equipamentos")
-      .then((response) => response.json())
-      .then((dados) => {
-        this.setCarros(dados.carros);
-        this.setTelefones(dados);
-        this.setKitsDeReanimacao(dados.kitsDeReanimacao);
-      });
-      */
-
-    fetch("http://localhost:3001/equipamentos")
-      .then((response) => response.json())
-      .then((dados) => {
-        this.$store.dispatch("adicinarEquipamentos", dados);
-      });
+    this.$store.dispatch("fetchEquipamentos");
+    this.$store.dispatch("fetchProfissionais");
   },
 };
 </script>
