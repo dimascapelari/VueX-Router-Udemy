@@ -76,20 +76,21 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    fetchEquipamentos(context) {
+    fetchEquipamentos(context, { carros, telefones, kitsDeReanimacao }) {
       fetch("http://localhost:3001/equipamentos")
         .then((response) => response.json())
         .then((dados) => {
           console.log(dados);
           // this.$store.dispatch("adicinarEquipamentos", dados);
 
-          context.commit("setCarros", dados.carros);
+          if (carros) context.commit("setCarros", dados.carros);
           //poderia ter aqui um processamento assíncrono
 
-          context.commit("setTelefones", dados.telefones);
+          if (telefones) context.commit("setTelefones", dados.telefones);
           //poderia ter aqui um processamento assíncrono e diversar regras de negócio
 
-          context.commit("setKitsDeReanimacao", dados.kitsDeReanimacao);
+          if (kitsDeReanimacao)
+            context.commit("setKitsDeReanimacao", dados.kitsDeReanimacao);
         });
     },
     fetchProfissionais(context) {
