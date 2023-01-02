@@ -49,7 +49,7 @@
           <div class="col">
             <img
               class="img-fluid"
-              :src="require('@/assets/ambulancias/indefinida.png')"
+              :src="require(`@/assets/ambulancias/${imgAmbulancia}`)"
             />
           </div>
         </div>
@@ -120,6 +120,18 @@ export default {
         return "text-danger";
       }
       return "text-primary";
+    },
+
+    imgAmbulancia() {
+      if (this.kitDeReanimacao) {
+        return "uti.png";
+      }
+
+      if (this.carro) {
+        return "simples.png";
+      }
+
+      return "indefinida.png";
     },
   },
 };
