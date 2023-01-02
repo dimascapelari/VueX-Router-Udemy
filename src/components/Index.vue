@@ -66,9 +66,23 @@ export default {
       "setKitsDeReanimacao",
     ]),
     //...mapActions(["fetchEquipamentos", "fetchProfissionais"]),
+    /*
     ...mapActions({
       fetchEquipamentos: "fetchEquipamentos",
       fetchProfissionais: "fetchProfissionais",
+    }),
+    */
+    ...mapActions({
+      fetchEquipamentos: (dispatch, payload) => {
+        //implementar uma lógica
+        //console.log("payload: ", payload);
+        dispatch("fetchEquipamentos", payload);
+        //implementar uma lógica
+      },
+      fetchProfissionais: (dispatch) => {
+        //implementar lógica
+        dispatch("fetchProfissionais");
+      },
     }),
   },
   created() {
