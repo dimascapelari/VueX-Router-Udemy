@@ -80,7 +80,7 @@ export default new Vuex.Store({
       // console.log(state.equipes);
       state.equipes.push(payload);
       state.equipe = {};
-      console.log(state.equipes);
+      // console.log(state.equipes);
     },
   },
   actions: {
