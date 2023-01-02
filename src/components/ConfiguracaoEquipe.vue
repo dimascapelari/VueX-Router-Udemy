@@ -110,18 +110,29 @@ export default {
       carro: (state) => state.equipe.carro,
       telefone: (state) => state.equipe.telefone,
       kitDeReanimacao: (state) => state.equipe.kitDeReanimacao,
-      // teste: (state) => state.titulo,
+
       // tituloCustomizadoLocal(state) {
       //   return `${this.titulo} - ${state.equipe.carro}`;
       // },
+
+      // --------- Segunda lógica cabulosa do Dimas ---------
+      tituloCustomizadoLocal(state) {
+        if (state.equipe.carro == null) {
+          return `${this.titulo} - ${""}`;
+        }
+        return `${this.titulo} - ${state.equipe.carro}`;
+      },
+      // -----------------------------------------------------
     }),
 
-    tituloCustomizadoLocal() {
-      if (this.carro == null) {
-        return `${this.titulo} - ${""}`;
-      }
-      return `${this.titulo} - ${this.carro}`;
-    },
+    // --------- Primeira lógica cabulosa do Dimas ---------
+    // tituloCustomizadoLocal() {
+    //   if (this.carro == null) {
+    //     return `${this.titulo} - ${""}`;
+    //   }
+    //   return `${this.titulo} - ${this.carro}`;
+    // },
+    // -----------------------------------------------------
 
     corTitulo() {
       let testeLogico = true;
