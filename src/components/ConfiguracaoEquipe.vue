@@ -111,10 +111,17 @@ export default {
       telefone: (state) => state.equipe.telefone,
       kitDeReanimacao: (state) => state.equipe.kitDeReanimacao,
       // teste: (state) => state.titulo,
-      tituloCustomizadoLocal(state) {
-        return `${this.titulo} - ${state.equipe.carro}`;
-      },
+      // tituloCustomizadoLocal(state) {
+      //   return `${this.titulo} - ${state.equipe.carro}`;
+      // },
     }),
+
+    tituloCustomizadoLocal() {
+      if (this.carro == null) {
+        return `${this.titulo} - ${""}`;
+      }
+      return `${this.titulo} - ${this.carro}`;
+    },
 
     corTitulo() {
       let testeLogico = true;

@@ -22,6 +22,8 @@
     <div v-if="tipo == 'socorristas'">
       Total: {{ totalSocorristasPorTurno(turno) }}
     </div>
+    <div v-if="tipo == 'enfermeiros'">Total: {{ totalEnfermeiros }}</div>
+    <div v-if="tipo == 'medicos'">Total: {{ totalMedicos }}</div>
   </div>
 </template>
 
@@ -68,6 +70,8 @@ export default {
     ...mapGetters({
       socorristasPorTurno: "socorristasPorTurno",
       totalSocorristasPorTurno: "totalSocorristasPorTurno",
+      totalEnfermeiros: "totalEnfermeiros",
+      totalMedicos: "totalMedicos",
     }),
 
     itens() {

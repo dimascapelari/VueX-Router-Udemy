@@ -35,6 +35,9 @@ export default new Vuex.Store({
       };
       // return state.socorristas.filter(s => s.turno === 'manhã')
     },
+    totalMedicos(state) {
+      return state.medicos.length;
+    },
     totalSocorristas: (state) => state.socorristas.length,
     totalSocorristasPorTurno: (state, getters) => {
       return (turno) => getters.socorristasPorTurno(turno).length;
