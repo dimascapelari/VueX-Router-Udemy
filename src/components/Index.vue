@@ -18,7 +18,9 @@
         </div>
       </div>
 
-      <div class="row mt-5 mb-5 bg-light p-2">
+      <div
+        class="row mt-5 mb-5 bg-light border border-1 border-primary rounded p-2"
+      >
         <div class="col">
           <configuracao-equipe />
         </div>

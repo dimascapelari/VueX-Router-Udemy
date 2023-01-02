@@ -88,7 +88,7 @@ export default new Vuex.Store({
       fetch("http://localhost:3001/equipamentos")
         .then((response) => response.json())
         .then((dados) => {
-          console.log(dados);
+          // console.log(dados);
           // this.$store.dispatch("adicinarEquipamentos", dados);
 
           if (carros) context.commit("setCarros", dados.carros);
