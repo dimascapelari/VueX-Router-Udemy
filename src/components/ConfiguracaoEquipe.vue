@@ -125,14 +125,14 @@ export default {
       // -----------------------------------------------------
     }),
 
-    // --------- Primeira lógica cabulosa do Dimas ---------
+    // --------- Primeira lógica cabulosa do Dimas ----------
     // tituloCustomizadoLocal() {
     //   if (this.carro == null) {
     //     return `${this.titulo} - ${""}`;
     //   }
     //   return `${this.titulo} - ${this.carro}`;
     // },
-    // -----------------------------------------------------
+    // ------------------------------------------------------
 
     corTitulo() {
       let testeLogico = true;
