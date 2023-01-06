@@ -94,10 +94,10 @@ export default new Vuex.Store({
           // this.$store.dispatch("adicinarEquipamentos", dados);
 
           if (carros) context.commit("setCarros", dados.carros);
-          //poderia ter aqui um processamento assíncrono
+          //poderia ter aqui um processamento assíncrono.
 
           if (telefones) context.commit("setTelefones", dados.telefones);
-          //poderia ter aqui um processamento assíncrono e diversar regras de negócio
+          //poderia ter aqui um processamento assíncrono e diversar regras de negócio.
 
           if (kitsDeReanimacao)
             context.commit("setKitsDeReanimacao", dados.kitsDeReanimacao);
