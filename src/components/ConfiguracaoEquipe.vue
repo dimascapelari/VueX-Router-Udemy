@@ -115,24 +115,24 @@ export default {
       //   return `${this.titulo} - ${state.equipe.carro}`;
       // },
 
-      // --------- Segunda lógica cabulosa do Dimas ---------
+      // ---------- Segunda lógica cabulosa do Dimas ----------
       tituloCustomizadoLocal(state) {
         if (state.equipe.carro == null) {
           return `${this.titulo} - ${""}`;
         }
         return `${this.titulo} - ${state.equipe.carro}`;
       },
-      // -----------------------------------------------------
+      // ------------------------------------------------------
     }),
 
-    // --------- Primeira lógica cabulosa do Dimas ----------
+    // ---------- Primeira lógica cabulosa do Dimas -----------
     // tituloCustomizadoLocal() {
     //   if (this.carro == null) {
     //     return `${this.titulo} - ${""}`;
     //   }
     //   return `${this.titulo} - ${this.carro}`;
     // },
-    // ------------------------------------------------------
+    // -------------------------------------------------------
 
     corTitulo() {
       let testeLogico = true;
